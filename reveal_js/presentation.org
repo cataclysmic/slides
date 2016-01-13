@@ -1,0 +1,117 @@
+# reveal.js test presentation
+# <2016-01-11 Mo>
+# Short presentation on 
+# 1 - reveal.js presentation software
+# 2 - pandoc format conversion software
+
+# Configure the slides
+#+REVEAL_HLEVEL: 1
+#+REVEAL_THEME: league
+#+OPTIONS:reveal_slide_number:nil
+#+OPTIONS: num:nil
+# OPTIONS: reveal_single_file:t
+# REVEAL_MATHJAX_URL: file:///home/cataclysmic/Research/teaching/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+#+REVEAL_ROOT: file:///home/cataclysmic/Research/teaching/reveal.js/
+# REVEAL_ROOT: http://lab.hakim.se/reveal-js/
+#+REVEAL_PLUGINS: (highlight markdown)
+# REVEAL_HIGHLIGHT_CSS: (zenburn)
+
+#+TITLE: reveal.js + pandoc (file converter)
+#+AUTHOR: Felix Albrecht
+#+EMAIL: felix.abrecht.uni@gmail.com
+#+WEBSITE: felixalbrecht.net
+
+
+* 'reveal.js'
+  
+** Features
+#+ATTR_REVEAL: :frag (appear)
+	* modern looking, feature rich presentation software
+	* HTML + JScript + CSS based 
+	* works on all devices featuring a modern browser
+	* support for HTML5 features *Movies, Gifs, Animations*
+	* math text using LaTeX syntax via MathJax implementation $R^2 = \frac{\sum\left(\hat{y}_i - \bar{y}\right)^2}{\sum\left(y_i - \bar{y}\right)^2}$
+	  
+** Features II 
+#+ATTR_REVEAL: :frag (appear)
+	* suppports MarkDown slide content
+	* presenter mode
+	* remote controlled slide switches on clients via socket
+	  
+
+*(Grunt server required)*
+
+** Features III 
+#+ATTR_REVEAL: :frag (appear)
+	* offers online WYSIWYG editor
+	  
+*(Non-Free)*
+	  
+** Requirements
+
+   * modern web browser
+   * internet connection *if using online ressources*
+	 
+#+BEGIN_SRC html
+	http://lab.hakim.se/reveal-js
+#+END_SRC
+	 - reveal.js framework
+#+BEGIN_SRC html
+	http://lab.hakim.se/reveal-js/css/theme/league.css org-example.org
+#+END_SRC
+	 - reveal.js stylesheets
+#+BEGIN_SRC html
+	http://lab.hakim.se/reveal-js/css/theme/league.css org-example.org
+#+END_SRC
+	 - MathJax framework
+
+* 'pandoc'?	  
+
+#+ATTR_REVEAL: :frag appear
+   * Open Source file converter
+   * Supports many formats
+   * Cross-Plattform (Win, *Nix)
+   * Write in what you are most comfortable with. Convert later.
+	 
+** Supported Formats I
+	- *HTML formats:* XHTML, HTML5, and HTML slide shows using Slidy, reveal.js, Slideous, S5, or DZSlides.
+	- *Word processor formats:* Microsoft Word docx, OpenOffice/LibreOffice ODT, OpenDocument XML
+	- *Ebooks:* EPUB version 2 or 3, FictionBook2
+	- *Documentation formats:* DocBook, GNU TexInfo, Groff man pages, Haddock markup
+	- *Page layout formats:* InDesign ICML
+	  
+** Supported Formats II
+	- *Outline formats:* OPML
+	- *TeX formats:* LaTeX, ConTeXt, LaTeX Beamer slides
+	- *PDF* via LaTeX
+	- *Lightweight markup formats:* Markdown (including CommonMark), reStructuredText, AsciiDoc, MediaWiki markup, DokuWiki markup, Emacs Org-Mode, TextileHTML formats: XHTML, HTML5, and HTML slide shows using Slidy, reveal.js, Slideous, S5, or DZSlides.
+	  
+
+* A Workflow
+ 
+** Writing 
+   
+(example based on Org-Mode)
+
+#+BEGIN_SRC markdown
+lalala
+#+END_SRC
+
+** Conversion Example
+#+BEGIN_SRC shell
+pandoc -t revealjs \
+        -f org \
+         --slide-level=2 \
+          --standalone \
+           -V revealjs-url=http://lab.hakim.se/reveal-js \
+            --css=http://lab.hakim.se/reveal-js/css/theme/league.css \
+             --mathjax \
+			  -self-contained \   # clashes with --mathjax
+               org-example.org -o example.html
+#+END_SRC
+
+[[./example.html][>> Output]]
+
+* The End
+
+*Slides under* [[https://github.com/cataclysmic/slides/reveal_js]]

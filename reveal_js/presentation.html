@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>reveal.js + pandoc (file converter)</title>
+<meta name="author" content="(Felix Albrecht)"/>
+<link rel="stylesheet" href="file:///home/cataclysmic/Research/teaching/reveal.js/css/reveal.css"/>
+<link rel="stylesheet" href="file:///home/cataclysmic/Research/teaching/reveal.js/css/theme/league.css" id="theme"/>
+<link rel="stylesheet" href=""/>
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'file:///home/cataclysmic/Research/teaching/reveal.js/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide">
+<h1>reveal.js + pandoc (file converter)</h1>
+<h2>Felix Albrecht</h2>
+<h2><a href="mailto:felix.abrecht.uni@gmail.com">felix.abrecht.uni@gmail.com</a></h2>
+<h2></h2>
+</section>
+<section id="table-of-contents">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#/slide-orgheadline5">'reveal.js'</a>
+<ul>
+<li><a href="#/slide-orgheadline1">Features</a></li>
+<li><a href="#/slide-orgheadline2">Features II</a></li>
+<li><a href="#/slide-orgheadline3">Features III</a></li>
+<li><a href="#/slide-orgheadline4">Requirements</a></li>
+</ul>
+</li>
+<li><a href="#/slide-orgheadline8">'pandoc'?</a>
+<ul>
+<li><a href="#/slide-orgheadline6">Supported Formats I</a></li>
+<li><a href="#/slide-orgheadline7">Supported Formats II</a></li>
+</ul>
+</li>
+<li><a href="#/slide-orgheadline11">A Workflow</a>
+<ul>
+<li><a href="#/slide-orgheadline9">Writing</a></li>
+<li><a href="#/slide-orgheadline10">Conversion Example</a></li>
+</ul>
+</li>
+<li><a href="#/slide-orgheadline12">The End</a></li>
+</ul>
+</div>
+</div>
+</section>
+
+
+<section>
+<section id="slide-orgheadline5">
+<h2 id="orgheadline5">'reveal.js'</h2>
+<div class="outline-text-2" id="text-orgheadline5">
+</div></section>
+<section id="slide-orgheadline1">
+<h3 id="orgheadline1">Features</h3>
+<ul>
+<li class="fragment appear">modern looking, feature rich presentation software</li>
+<li class="fragment appear">HTML + JScript + CSS based</li>
+<li class="fragment appear">works on all devices featuring a modern browser</li>
+<li class="fragment appear">support for HTML5 features <b>Movies, Gifs, Animations</b></li>
+<li class="fragment appear">math text using LaTeX syntax via MathJax implementation \(R^2 = \frac{\sum\left(\hat{y}_i - \bar{y}\right)^2}{\sum\left(y_i - \bar{y}\right)^2}\)</li>
+
+</ul>
+
+</section>
+<section id="slide-orgheadline2">
+<h3 id="orgheadline2">Features II</h3>
+<ul>
+<li class="fragment appear">suppports MarkDown slide content</li>
+<li class="fragment appear">presenter mode</li>
+<li class="fragment appear">remote controlled slide switches on clients via socket</li>
+
+</ul>
+
+
+<p>
+<b>(Grunt server required)</b>
+</p>
+
+</section>
+<section id="slide-orgheadline3">
+<h3 id="orgheadline3">Features III</h3>
+<ul>
+<li class="fragment appear">offers online WYSIWYG editor</li>
+
+</ul>
+
+<p>
+<b>(Non-Free)</b>
+</p>
+
+</section>
+<section id="slide-orgheadline4">
+<h3 id="orgheadline4">Requirements</h3>
+<ul>
+<li>modern web browser</li>
+<li>internet connection <b>if using online ressources</b></li>
+
+</ul>
+
+<div class="org-src-container">
+
+<pre><code class="html">http://lab.hakim.se/reveal-js
+</code></pre>
+</div>
+<ul>
+<li>reveal.js framework</li>
+
+</ul>
+<div class="org-src-container">
+
+<pre><code class="html">http://lab.hakim.se/reveal-js/css/theme/league.css org-example.org
+</code></pre>
+</div>
+<ul>
+<li>reveal.js stylesheets</li>
+
+</ul>
+<div class="org-src-container">
+
+<pre><code class="html">http://lab.hakim.se/reveal-js/css/theme/league.css org-example.org
+</code></pre>
+</div>
+<ul>
+<li>MathJax framework</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orgheadline8">
+<h2 id="orgheadline8">'pandoc'?</h2>
+<ul class="fragment appear">
+<li>Open Source file converter</li>
+<li>Supports many formats</li>
+<li>Cross-Plattform (Win, *Nix)</li>
+<li>Write in what you are most comfortable with. Convert later.</li>
+
+</ul>
+
+</section>
+<section id="slide-orgheadline6">
+<h3 id="orgheadline6">Supported Formats I</h3>
+<ul>
+<li><b>HTML formats:</b> XHTML, HTML5, and HTML slide shows using Slidy, reveal.js, Slideous, S5, or DZSlides.</li>
+<li><b>Word processor formats:</b> Microsoft Word docx, OpenOffice/LibreOffice ODT, OpenDocument XML</li>
+<li><b>Ebooks:</b> EPUB version 2 or 3, FictionBook2</li>
+<li><b>Documentation formats:</b> DocBook, GNU TexInfo, Groff man pages, Haddock markup</li>
+<li><b>Page layout formats:</b> InDesign ICML</li>
+
+</ul>
+
+</section>
+<section id="slide-orgheadline7">
+<h3 id="orgheadline7">Supported Formats II</h3>
+<ul>
+<li><b>Outline formats:</b> OPML</li>
+<li><b>TeX formats:</b> LaTeX, ConTeXt, LaTeX Beamer slides</li>
+<li><b>PDF</b> via LaTeX</li>
+<li><b>Lightweight markup formats:</b> Markdown (including CommonMark), reStructuredText, AsciiDoc, MediaWiki markup, DokuWiki markup, Emacs Org-Mode, TextileHTML formats: XHTML, HTML5, and HTML slide shows using Slidy, reveal.js, Slideous, S5, or DZSlides.</li>
+
+</ul>
+
+
+</section>
+</section>
+<section>
+<section id="slide-orgheadline11">
+<h2 id="orgheadline11">A Workflow</h2>
+<div class="outline-text-2" id="text-orgheadline11">
+</div></section>
+<section id="slide-orgheadline9">
+<h3 id="orgheadline9">Writing</h3>
+<p>
+(example based on Org-Mode)
+</p>
+
+<div class="org-src-container">
+
+<pre><code class="markdown">
+* 'reveal.js'
+  
+** Features
+#+ATTR_REVEAL: :frag (appear)
+	* modern looking, feature rich presentation software
+	* HTML + JScript + CSS based 
+	* works on all devices featuring a modern browser
+	* support for HTML5 features *Movies, Gifs, Animations*
+	* math text using LaTeX syntax via MathJax implementation 
+$R^2 = \frac{\sum\left(\hat{y}_i - \bar{y}\right)^2}{\sum\left(y_i - \bar{y}\right)^2}$
+	  
+** Features II 
+*(Grunt server required)*
+#+ATTR_REVEAL: :frag (appear)
+	* suppports MarkDown slide content
+	* presenter mode
+	* remote controlled slide switches on clients via socket
+
+** Features III 
+*(Non-Free)*
+#+ATTR_REVEAL: :frag (appear)
+	* offers online WYSIWYG editor
+	
+	  
+** Code highlighting
+
+#+BEGIN_SRC python
+class CognitiveReflectionTest(Page):
+    form_model = models.Player
+    form_fields = ['crt_bat',
+                  'crt_widget',
+                  'crt_lake']
+
+class Iban(Page):
+    form_model = models.Player
+    form_fields = ['iban',
+                   'bic',
+                   'name',
+                   'vorname']
+#+END_SRC
+
+** 
+
+[[./blame_program.jpg]]
+</code></pre>
+</div>
+
+</section>
+<section id="slide-orgheadline10">
+<h3 id="orgheadline10">Conversion Example</h3>
+<div class="org-src-container">
+
+<pre><code class="shell">pandoc -t revealjs \
+		-f org \
+		 --slide-level=2 \
+		  --standalone \
+		   -V revealjs-url=http://lab.hakim.se/reveal-js \
+			--css=http://lab.hakim.se/reveal-js/css/theme/league.css \
+			 --mathjax \
+			  -self-contained \   # clashes with --mathjax
+			   org-example.org -o example.html
+</code></pre>
+</div>
+
+<p>
+<a href="./example.html">&gt;&gt; Output</a>
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-orgheadline12">
+<h2 id="orgheadline12">The End</h2>
+<p>
+<b>Slides under</b> <a href="https://github.com/cataclysmic/slides/reveal_js">https://github.com/cataclysmic/slides/reveal_js</a>
+</p>
+</section>
+</section>
+</div>
+</div>
+<script src="file:///home/cataclysmic/Research/teaching/reveal.js/lib/js/head.min.js"></script>
+<script src="file:///home/cataclysmic/Research/teaching/reveal.js/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: true,
+rollingLinks: false,
+keyboard: true,
+overview: true,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'default',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: 'file:///home/cataclysmic/Research/teaching/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+ { src: 'file:///home/cataclysmic/Research/teaching/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'file:///home/cataclysmic/Research/teaching/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } }]
+});
+</script>
+</body>
+</html>

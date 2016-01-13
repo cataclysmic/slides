@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title></title>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="http://lab.hakim.se/reveal-js/css/reveal.min.css"/>
+    <style type="text/css">code{white-space: pre;}</style>
+    <style type="text/css">
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; }
+code > span.dt { color: #902000; }
+code > span.dv { color: #40a070; }
+code > span.bn { color: #40a070; }
+code > span.fl { color: #40a070; }
+code > span.ch { color: #4070a0; }
+code > span.st { color: #4070a0; }
+code > span.co { color: #60a0b0; font-style: italic; }
+code > span.ot { color: #007020; }
+code > span.al { color: #ff0000; font-weight: bold; }
+code > span.fu { color: #06287e; }
+code > span.er { color: #ff0000; font-weight: bold; }
+    </style>
+    <link rel="stylesheet" href="http://lab.hakim.se/reveal-js/css/theme/league.css"/>
+    <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+    <script>
+      if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'http://lab.hakim.se/reveal-js/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+      }
+    </script>
+    <!--[if lt IE 9]>
+    <script src="http://lab.hakim.se/reveal-js/lib/js/html5shiv.js"></script>
+    <![endif]-->
+    <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+
+<section><section class="titleslide slide level1"><h1>'reveal.js'</h1></section><section class="slide level2">
+<h1>Features</h1>
+<ul>
+<li>modern looking, feature rich presentation software</li>
+<li>HTML + JScript + CSS based</li>
+<li>works on all devices featuring a modern browser</li>
+<li>support for HTML5 features <strong>Movies, Gifs, Animations</strong></li>
+<li>math text using LaTeX syntax via MathJax implementation</li>
+</ul>
+<p><span class="math">\(R^2 = \frac{\sum\left(\hat{y}_i - \bar{y}\right)^2}{\sum\left(y_i - \bar{y}\right)^2}\)</span></p>
+</section><section class="slide level2">
+<h1>Features II</h1>
+<p><strong>(Grunt server required)</strong></p>
+<ul>
+<li>suppports MarkDown slide content</li>
+<li>presenter mode</li>
+<li>remote controlled slide switches on clients via socket</li>
+</ul>
+</section><section class="slide level2">
+<h1>Features III</h1>
+<p><strong>(Non-Free)</strong></p>
+<ul>
+<li>offers online WYSIWYG editor</li>
+</ul>
+</section><section class="slide level2">
+<h1>Code highlighting</h1>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">class</span> CognitiveReflectionTest(Page):
+    form_model = models.Player
+    form_fields = [<span class="st">&#39;crt_bat&#39;</span>,
+                  <span class="co">&#39;crt_widget&#39;</span>,
+                  <span class="co">&#39;crt_lake&#39;</span>]
+
+<span class="kw">class</span> Iban(Page):
+    form_model = models.Player
+    form_fields = [<span class="st">&#39;iban&#39;</span>,
+                   <span class="co">&#39;bic&#39;</span>,
+                   <span class="co">&#39;name&#39;</span>,
+                   <span class="co">&#39;vorname&#39;</span>]</code></pre>
+</section><section class="slide level2">
+<h1></h1>
+<p><img src="./blame_program.jpg" /></p>
+</section></section>
+    </div>
+  </div>
+
+
+  <script src="http://lab.hakim.se/reveal-js/lib/js/head.min.js"></script>
+  <script src="http://lab.hakim.se/reveal-js/js/reveal.min.js"></script>
+
+  <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: 'http://lab.hakim.se/reveal-js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'http://lab.hakim.se/reveal-js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: 'http://lab.hakim.se/reveal-js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+//          { src: 'http://lab.hakim.se/reveal-js/plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; }, }
+//          { src: 'http://lab.hakim.se/reveal-js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+]});
+    </script>
+    </body>
+</html>
