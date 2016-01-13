@@ -114,4 +114,4 @@ pandoc -t revealjs \
 
 * The End
 
-*Slides under* [[https://github.com/cataclysmic/slides/reveal_js]]
+*Slides under* [[https://github.com/cataclysmic/slides/]]
