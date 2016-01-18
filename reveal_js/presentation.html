@@ -4,8 +4,8 @@
 <meta charset="utf-8"/>
 <title>reveal.js + pandoc (file converter)</title>
 <meta name="author" content="(Felix Albrecht)"/>
-<link rel="stylesheet" href="file:///home/cataclysmic/Research/teaching/reveal.js/css/reveal.css"/>
-<link rel="stylesheet" href="file:///home/cataclysmic/Research/teaching/reveal.js/css/theme/league.css" id="theme"/>
+<link rel="stylesheet" href="http://lab.hakim.se/reveal-js/css/reveal.css"/>
+<link rel="stylesheet" href="http://lab.hakim.se/reveal-js/css/theme/league.css" id="theme"/>
 <link rel="stylesheet" href=""/>
 <!-- If the query includes 'print-pdf', include the PDF print sheet -->
 <script>
@@ -13,7 +13,7 @@
         var link = document.createElement( 'link' );
         link.rel = 'stylesheet';
         link.type = 'text/css';
-        link.href = 'file:///home/cataclysmic/Research/teaching/reveal.js/css/print/pdf.css';
+        link.href = 'http://lab.hakim.se/reveal-js/css/print/pdf.css';
         document.getElementsByTagName( 'head' )[0].appendChild( link );
     }
 </script>
@@ -192,51 +192,7 @@
 
 <div class="org-src-container">
 
-<pre><code class="markdown">
-* 'reveal.js'
-  
-** Features
-#+ATTR_REVEAL: :frag (appear)
-	* modern looking, feature rich presentation software
-	* HTML + JScript + CSS based 
-	* works on all devices featuring a modern browser
-	* support for HTML5 features *Movies, Gifs, Animations*
-	* math text using LaTeX syntax via MathJax implementation 
-$R^2 = \frac{\sum\left(\hat{y}_i - \bar{y}\right)^2}{\sum\left(y_i - \bar{y}\right)^2}$
-	  
-** Features II 
-*(Grunt server required)*
-#+ATTR_REVEAL: :frag (appear)
-	* suppports MarkDown slide content
-	* presenter mode
-	* remote controlled slide switches on clients via socket
-
-** Features III 
-*(Non-Free)*
-#+ATTR_REVEAL: :frag (appear)
-	* offers online WYSIWYG editor
-	
-	  
-** Code highlighting
-
-#+BEGIN_SRC python
-class CognitiveReflectionTest(Page):
-    form_model = models.Player
-    form_fields = ['crt_bat',
-                  'crt_widget',
-                  'crt_lake']
-
-class Iban(Page):
-    form_model = models.Player
-    form_fields = ['iban',
-                   'bic',
-                   'name',
-                   'vorname']
-#+END_SRC
-
-** 
-
-[[./blame_program.jpg]]
+<pre><code class="markdown">lalala
 </code></pre>
 </div>
 
@@ -273,8 +229,8 @@ class Iban(Page):
 </section>
 </div>
 </div>
-<script src="file:///home/cataclysmic/Research/teaching/reveal.js/lib/js/head.min.js"></script>
-<script src="file:///home/cataclysmic/Research/teaching/reveal.js/js/reveal.js"></script>
+<script src="http://lab.hakim.se/reveal-js/lib/js/head.min.js"></script>
+<script src="http://lab.hakim.se/reveal-js/js/reveal.js"></script>
 
 <script>
 // Full list of configuration options available here:
@@ -301,9 +257,9 @@ multiplex: {
 
 // Optional libraries used to extend on reveal.js
 dependencies: [
- { src: 'file:///home/cataclysmic/Research/teaching/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
- { src: 'file:///home/cataclysmic/Research/teaching/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
- { src: 'file:///home/cataclysmic/Research/teaching/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } }]
+ { src: 'http://lab.hakim.se/reveal-js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+ { src: 'http://lab.hakim.se/reveal-js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'http://lab.hakim.se/reveal-js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } }]
 });
 </script>
 </body>

@@ -11,8 +11,8 @@
 #+OPTIONS: num:nil
 # OPTIONS: reveal_single_file:t
 # REVEAL_MATHJAX_URL: file:///home/cataclysmic/Research/teaching/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML
-#+REVEAL_ROOT: file:///home/cataclysmic/Research/teaching/reveal.js/
-# REVEAL_ROOT: http://lab.hakim.se/reveal-js/
+# REVEAL_ROOT: file:///home/cataclysmic/Research/teaching/reveal.js/
+#+REVEAL_ROOT: http://lab.hakim.se/reveal-js/
 #+REVEAL_PLUGINS: (highlight markdown)
 # REVEAL_HIGHLIGHT_CSS: (zenburn)
 
